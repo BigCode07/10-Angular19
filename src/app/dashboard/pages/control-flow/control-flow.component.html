@@ -17,4 +17,22 @@
     <p>*********</p>
     }
   </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-3xl text-green-900">{{ grade() }}</h2>
+
+    @switch (grade()) { @case ('A') {
+    <p>Arriba de 90</p>
+    } @case ('B') {
+    <p>Arriba de 80</p>
+    } @case ('C') {
+    <p>Arriba de 70</p>
+    } @case ('D') {
+    <p>Arriba de 60</p>
+    } @case ('E') {
+    <p>Arriba de 50</p>
+    } @case ('F') {
+    <p>Abajo de 40</p>
+    } }
+  </div>
 </section>
