@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './control-flow.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ControlFlowComponent { }
+export default class ControlFlowComponent {}

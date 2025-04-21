@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './defer-options.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DeferOptionsComponent { }
+export default class DeferOptionsComponent {}

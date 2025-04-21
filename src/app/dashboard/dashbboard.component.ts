@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashbboard',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './dashbboard.component.html',
 })
-export class DashbboardComponent {}
+export default class DashbboardComponent {}

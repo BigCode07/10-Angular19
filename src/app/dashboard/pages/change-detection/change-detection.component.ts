@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [CommonModule],
   templateUrl: './change-detection.component.html',
 })
-export class ChangeDetectionComponent {}
+export default class ChangeDetectionComponent {}
