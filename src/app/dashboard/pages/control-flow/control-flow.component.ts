@@ -1,9 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-control-flow',
   imports: [],
   templateUrl: './control-flow.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class ControlFlowComponent {}
+export default class ControlFlowComponent {
+  public showContent = signal<Boolean>(false);
+
+  toggleContent() {
+    this.showContent.update((value) => !value);
+  }
+}
