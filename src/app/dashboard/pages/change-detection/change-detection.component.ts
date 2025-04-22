@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 import { TitleComponent } from '../../../shared/title/title.component';
 
 @Component({
@@ -13,6 +18,10 @@ import { TitleComponent } from '../../../shared/title/title.component';
   `,
 })
 export default class ChangeDetectionComponent {
+  // public currentFramework = computed(
+  //   () => `Change detection - ${this.frameworkasSignal().name}`
+  // )
+
   public frameworkasSignal = signal<Object>({
     name: 'Angular with Signal',
     releaseDate: 2018,
