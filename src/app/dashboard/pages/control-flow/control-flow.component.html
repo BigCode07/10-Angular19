@@ -18,6 +18,7 @@
     }
   </div>
 
+  <!-- @switch -->
   <div class="bg-white rounded shadow p-10">
     <h2 class="text-3xl text-green-900">{{ grade() }}</h2>
 
@@ -34,5 +35,26 @@
     } @case ('F') {
     <p>Abajo de 40</p>
     } }
+  </div>
+
+  <!-- @for -->
+  <div class="bg-white rounded shadow p-10">
+    <ul>
+      @for (framework of frameworks(); track $index) {
+      <li>{{ framework }}</li>
+      } @empty {
+      <li>No hay frameworks agregados</li>
+      }
+    </ul>
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <ul>
+      @for (framework of frameworks2(); track $index) {
+      <li>{{ framework }}</li>
+      } @empty {
+      <li>No hay frameworks agregados</li>
+      }
+    </ul>
   </div>
 </section>
