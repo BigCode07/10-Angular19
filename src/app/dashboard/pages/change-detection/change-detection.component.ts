@@ -1,9 +1,36 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { TitleComponent } from '../../../shared/title/title.component';
 
 @Component({
   selector: 'app-change-detection',
-  imports: [CommonModule],
-  templateUrl: './change-detection.component.html',
+  imports: [CommonModule, TitleComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    <shared-title title="Change Detection" />
+    <pre>{{ frameworkasSignal() | json }}</pre>
+    <pre>{{ frameworkasProperty | json }}</pre>
+  `,
 })
-export default class ChangeDetectionComponent {}
+export default class ChangeDetectionComponent {
+  public frameworkasSignal = signal<Object>({
+    name: 'Angular with Signal',
+    releaseDate: 2018,
+  });
+
+  public frameworkasProperty = {
+    name: 'Angular with Property',
+    releaseDate: 2015,
+  };
+
+  constructor() {
+    setTimeout(() => {
+      // this.frameworkasProperty.name = 'React';
+      this.frameworkasSignal.update((value) => ({
+        ...value,
+        name: 'React',
+      }));
+      console.log('Hecho');
+    }, 3000);
+  }
+}
