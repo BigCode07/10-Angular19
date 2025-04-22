@@ -1,9 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { booleanAttribute, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-title',
+  selector: 'shared-title',
   imports: [],
-  templateUrl: './title.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: ` <h1 class="text-3xl mb-5">{{ title }}-{{ withShadow }}</h1>`,
 })
-export class TitleComponent { }
+export class TitleComponent {
+  @Input({ required: true }) title!: string;
+  @Input({ transform: booleanAttribute }) withShadow: boolean = false;
+}
